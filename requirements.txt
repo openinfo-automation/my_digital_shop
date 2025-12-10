@@ -1,0 +1,5 @@
+Flask==2.3.5
+stripe==7.12.0
+requests==2.32.0
+gunicorn==21.2.0
+pdfkit==1.0.0
