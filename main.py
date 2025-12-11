@@ -1,10 +1,10 @@
 import os
 import stripe
-from flask import Flask, render_template, redirect, send_from_directory
+from flask import Flask, render_template, redirect, send_from_directory, url_for
 
 app = Flask(__name__)
 
-# Safe: read Stripe key from environment variable
+# Stripe secret key from environment variable
 stripe.api_key = os.environ.get("STRIPE_SECRET_KEY")
 
 @app.route("/")
@@ -31,7 +31,12 @@ def create_checkout_session():
 
 @app.route("/success")
 def success():
-    # Serve the PDF for download after purchase
+    # Show thank-you page and trigger PDF download automatically
+    return render_template("success.html")
+
+@app.route("/download")
+def download():
+    # Serve the PDF file for download
     return send_from_directory('static', 'product.pdf', as_attachment=True)
 
 if __name__ == "__main__":
