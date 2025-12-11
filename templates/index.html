@@ -4,12 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Monster Brains - 30 Unique Designs</title>
-
-<!-- Hidden Background Music -->
-<audio autoplay loop id="bg-music">
-    <source src="/static/mysong.mp3" type="audio/mpeg">
-</audio>
-
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
@@ -155,28 +149,25 @@ h1 {
     font-size: 14px;
     margin-top: 15px;
 }
-
-/* Lightbox overlay */
 #lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    cursor: pointer;
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.9);
+justify-content: center;
+align-items: center;
+z-index: 1000;
+cursor: pointer;
 }
 #lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-    box-shadow: 0 0 50px rgba(255,255,255,0.1);
+max-width: 90%;
+max-height: 90%;
+border-radius: 10px;
+box-shadow: 0 0 50px rgba(255,255,255,0.1);
 }
-
 @media (max-width: 768px) {
 .container { padding: 30px 20px; }
 h1 { font-size: 32px; }
@@ -184,17 +175,23 @@ h1 { font-size: 32px; }
 .price { font-size: 36px; }
 }
 </style>
-
 </head>
 <body>
+
+<!-- Background music -->
+<audio autoplay loop id="bg-music">
+    <source src="/static/mysong.mp3" type="audio/mpeg">
+</audio>
+<script>
+document.addEventListener("click", function() {
+    const audio = document.getElementById("bg-music");
+    if (audio) audio.play();
+}, { once: true });
+</script>
 
 <div class="container">
     <h1>AI Monster Brains</h1>
     <p class="subtitle">30 Unique High-Resolution Designs</p>
-
-    <div style="text-align: center; margin-bottom: 20px;">
-        <img src="https://visitor-badge.laobi.icu/badge?page_id=my-digital-shop" alt="Visitors" style="border-radius: 5px;"/>
-    </div>
 
     <p class="description">
         Unleash your creativity with this collection of 30 AI-generated monster brain illustrations. 
@@ -214,8 +211,7 @@ h1 { font-size: 32px; }
     </div>
 
     <!-- Main preview image -->
-    <img src="/static/3A3BF260-A6D4-44D8-95B6-DFA330863974.JPG" 
-         alt="Monster Brain Preview" class="thumbnail" onclick="openLightbox(this.src)">
+    <img src="/static/3A3BF260-A6D4-44D8-95B6-DFA330863974.JPG" alt="Monster Brain Preview" class="thumbnail" onclick="openLightbox(this.src)">
 
     <!-- Sample gallery -->
     <h3 class="samples-heading">Preview Samples (Click to Enlarge)</h3>
@@ -225,25 +221,35 @@ h1 { font-size: 32px; }
         <img src="/static/885C1B1A-C1D2-464D-8F2C-8D9B9645EBAA.JPG" alt="Sample 3" onclick="openLightbox(this.src)">
     </div>
 
-    <!-- Price + Buy -->
+    <!-- Price and buy section -->
     <div class="price-section">
         <div class="price">$5</div>
         <p class="price-note">One-time payment • Instant access</p>
-
         <form action="/create-checkout-session" method="POST">
             <button type="submit" class="buy-button">Buy Now</button>
         </form>
-
         <p class="guarantee">🔒 Secure checkout powered by Stripe</p>
     </div>
 
-    <!-- Social Share Buttons -->
+    <!-- Social Share Buttons (app-first) -->
     <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f7fafc; border-radius: 12px;">
         <h3 style="color: #2d3748; font-size: 18px; margin-bottom: 15px;">Share this product:</h3>
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-            <a href="https://twitter.com/intent/tweet?text=Check%20out%20these%20AI%20Monster%20Brains%20-%2030%20unique%20designs%20for%20%245!&url=https://my-digital-shop.onrender.com" target="_blank" style="padding: 10px 20px; background: #1DA1F2; color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">Share on Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://my-digital-shop.onrender.com" target="_blank" style="padding: 10px 20px; background: #4267B2; color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">Share on Facebook</a>
-            <a href="https://www.reddit.com/submit?url=https://my-digital-shop.onrender.com&title=AI%20Monster%20Brains%20-%2030%20Unique%20Designs" target="_blank" style="padding: 10px 20px; background: #FF4500; color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">Share on Reddit</a>
+            <a href="twitter://post?message=Check%20out%20these%20AI%20Monster%20Brains%20-%2030%20unique%20designs%20for%20$5%20https://my-digital-shop.onrender.com"
+               onclick="if(!window.open('twitter://post?message=Check%20out%20these%20AI%20Monster%20Brains%20-%2030%20unique%20designs%20for%20$5%20https://my-digital-shop.onrender.com')){window.location='https://twitter.com/intent/tweet?text=Check%20out%20these%20AI%20Monster%20Brains%20-%2030%20unique%20designs%20for%20$5&url=https://my-digital-shop.onrender.com';} return false;"
+               style="padding: 10px 20px; background: #1DA1F2; color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">
+               Share on Twitter
+            </a>
+            <a href="fb://facewebmodal/f?href=https://my-digital-shop.onrender.com"
+               onclick="if(!window.open('fb://facewebmodal/f?href=https://my-digital-shop.onrender.com')){window.location='https://www.facebook.com/sharer/sharer.php?u=https://my-digital-shop.onrender.com';} return false;"
+               style="padding: 10px 20px; background: #4267B2; color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">
+               Share on Facebook
+            </a>
+            <a href="reddit://submit?url=https://my-digital-shop.onrender.com&title=AI%20Monster%20Brains%20-%2030%20Unique%20Designs"
+               onclick="if(!window.open('reddit://submit?url=https://my-digital-shop.onrender.com&title=AI%20Monster%20Brains%20-%2030%20Unique%20Designs')){window.location='https://www.reddit.com/submit?url=https://my-digital-shop.onrender.com&title=AI%20Monster%20Brains%20-%2030%20Unique%20Designs';} return false;"
+               style="padding: 10px 20px; background: #FF4500; color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">
+               Share on Reddit
+            </a>
         </div>
     </div>
 
@@ -254,7 +260,6 @@ h1 { font-size: 32px; }
     <img id="lightbox-img" src="" alt="Enlarged preview">
 </div>
 
-<!-- Lightbox Script -->
 <script>
 function openLightbox(src) {
     document.getElementById('lightbox-img').src = src;
@@ -263,17 +268,10 @@ function openLightbox(src) {
 function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
 }
+// Close lightbox with Escape key
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeLightbox();
 });
-</script>
-
-<!-- Mobile audio autoplay fix -->
-<script>
-document.addEventListener("click", function() {
-    const audio = document.getElementById("bg-music");
-    if (audio) audio.play();
-}, { once: true });
 </script>
 
 </body>
