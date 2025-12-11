@@ -5,14 +5,29 @@
     <title>AI_Monster_Brains.pdf</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        button { padding: 15px 30px; font-size: 18px; cursor: pointer; }
         h1 { color: #333; }
         p { font-size: 16px; color: #555; }
+        button { padding: 15px 30px; font-size: 18px; cursor: pointer; margin-top: 20px; }
+        .samples { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+        .samples img { width: 150px; height: auto; border: 1px solid #ccc; border-radius: 5px; }
+        .thumbnail { width: 300px; border: 2px solid #333; border-radius: 10px; margin-top: 20px; }
     </style>
 </head>
 <body>
     <h1>AI_Monster_Brains.pdf</h1>
     <p>30 unique AI-generated monster brains. Instant download after purchase!</p>
+
+    <!-- Big thumbnail -->
+    <img src="/static/3A3BF260-A6D4-44D8-95B6-DFA330863974.JPG" alt="Thumbnail" class="thumbnail">
+
+    <!-- Sample images gallery -->
+    <div class="samples">
+        <img src="/static/3A3BF260-A6D4-44D8-95B6-DFA330863974.JPG" alt="Sample 1">
+        <img src="/static/9BFC53D7-C2D5-40C0-BAD8-BA15C7F13E38.JPG" alt="Sample 2">
+        <img src="/static/885C1B1A-C1D2-464D-8F2C-8D9B9645EBAA.JPG" alt="Sample 3">
+    </div>
+
+    <!-- Buy button -->
     <form action="/buy">
         <button type="submit">Buy for $5</button>
     </form>
