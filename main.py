@@ -1,10 +1,10 @@
 import os
 import stripe
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, send_from_directory
 
 app = Flask(__name__)
 
-# Stripe key is now read safely from environment variable
+# Safe: read Stripe key from environment variable
 stripe.api_key = os.environ.get("STRIPE_SECRET_KEY")
 
 @app.route("/")
@@ -31,8 +31,8 @@ def create_checkout_session():
 
 @app.route("/success")
 def success():
-    return "<h1>Thank you! Your download will be available shortly.</h1>"
+    # Serve the PDF for download after purchase
+    return send_from_directory('static', 'product.pdf', as_attachment=True)
 
 if __name__ == "__main__":
-    # Render uses port 10000 for Python services
     app.run(host="0.0.0.0", port=10000)
