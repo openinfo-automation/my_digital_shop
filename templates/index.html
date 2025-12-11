@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Monster Brains - 30 Unique Designs</title>
-<link rel="icon" href="/static/favicon.ico">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
@@ -12,7 +11,6 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
-    color: #2d3748;
 }
 .container {
     max-width: 900px;
@@ -22,28 +20,84 @@ body {
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     padding: 50px 40px;
 }
-h1 { font-size: 42px; margin-bottom: 15px; font-weight: 700; letter-spacing: -1px; }
-.subtitle { font-size: 20px; color: #667eea; font-weight: 600; margin-bottom: 20px; }
-.description { font-size: 18px; line-height: 1.6; margin-bottom: 35px; }
-.features { background: #f7fafc; padding: 25px; border-radius: 12px; margin-bottom: 35px; border-left: 4px solid #667eea; }
-.features h3 { font-size: 20px; margin-bottom: 15px; }
+h1 { 
+    color: #2d3748; 
+    font-size: 42px; 
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+.subtitle {
+    font-size: 20px;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.description { 
+    font-size: 18px; 
+    color: #4a5568; 
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+.features {
+    background: #f7fafc;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+    border-left: 4px solid #667eea;
+}
+.features h3 { color: #2d3748; margin-bottom: 15px; font-size: 20px; }
 .features ul { list-style: none; padding-left: 0; }
-.features li { padding: 8px 0; font-size: 16px; }
+.features li { padding: 8px 0; color: #4a5568; font-size: 16px; }
 .features li:before { content: "✓ "; color: #667eea; font-weight: bold; margin-right: 8px; }
-.thumbnail { width: 100%; max-width: 500px; border: 4px solid #e2e8f0; border-radius: 15px; margin: 0 auto 40px; display: block; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; }
+
+.thumbnail { 
+    width: 100%; max-width: 500px; border: 4px solid #e2e8f0; 
+    border-radius: 15px; margin: 0 auto 40px; display: block; cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 .thumbnail:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-.samples-heading { text-align: center; font-size: 24px; margin-bottom: 20px; font-weight: 600; }
-.samples { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-bottom: 40px; }
-.samples img { width: 100%; height: 150px; object-fit: cover; border: 2px solid #e2e8f0; border-radius: 10px; cursor: pointer; transition: all 0.3s; }
-.samples img:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4); border-color: #667eea; }
-.price-section { text-align: center; background: #f7fafc; padding: 30px; border-radius: 12px; margin-bottom: 30px; }
+
+.samples-heading {
+    text-align: center; color: #2d3748; font-size: 24px; margin-bottom: 20px; font-weight: 600;
+}
+.samples { 
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-bottom: 40px;
+}
+.samples img { 
+    width: 100%; height: 150px; object-fit: cover; border: 2px solid #e2e8f0; border-radius: 10px; cursor: pointer; transition: all 0.3s;
+}
+.samples img:hover { 
+    transform: scale(1.05); box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4); border-color: #667eea;
+}
+
+.price-section {
+    text-align: center; background: #f7fafc; padding: 30px; border-radius: 12px; margin-bottom: 30px;
+}
 .price { font-size: 48px; color: #667eea; font-weight: 700; margin-bottom: 10px; }
 .price-note { color: #718096; font-size: 14px; margin-bottom: 20px; }
-.buy-button { padding: 18px 60px; font-size: 22px; cursor: pointer; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 50px; transition: all 0.3s; font-weight: 600; width: 100%; max-width: 350px; }
+.buy-button { 
+    padding: 18px 60px; font-size: 22px; cursor: pointer; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white; border: none; border-radius: 50px; transition: all 0.3s; font-weight: 600; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    width: 100%; max-width: 350px;
+}
 .buy-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6); }
-#lightbox { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:1000; cursor:pointer; }
-#lightbox img { max-width:90%; max-height:90%; border-radius:10px; box-shadow:0 0 50px rgba(255,255,255,0.1); }
-@media (max-width: 768px) { .container { padding: 30px 20px; } h1 { font-size: 32px; } .subtitle { font-size: 18px; } .price { font-size: 36px; } }
+
+#music-toggle { 
+    position: fixed; bottom: 20px; right: 20px; padding: 12px 20px; font-size: 14px; cursor: pointer; 
+    background: #764ba2; color: white; border: none; border-radius: 8px; z-index: 999;
+}
+
+#lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9);
+justify-content: center; align-items: center; z-index: 1000; cursor: pointer; }
+#lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 0 50px rgba(255,255,255,0.1); }
+
+@media (max-width: 768px) {
+    .container { padding: 30px 20px; }
+    h1 { font-size: 32px; }
+    .subtitle { font-size: 18px; }
+    .price { font-size: 36px; }
+}
 </style>
 </head>
 <body>
@@ -52,14 +106,16 @@ h1 { font-size: 42px; margin-bottom: 15px; font-weight: 700; letter-spacing: -1p
 <audio autoplay loop id="bg-music">
     <source src="/static/mysong.mp3" type="audio/mpeg">
 </audio>
+<button id="music-toggle">Toggle Music</button>
 
 <div class="container">
     <h1>AI Monster Brains</h1>
     <p class="subtitle">30 Unique High-Resolution Designs</p>
 
     <p class="description">
-        Unleash your creativity with this collection of 30 AI-generated monster brain illustrations.
-        Perfect for game design, horror projects, tabletop RPGs, digital art, or any creative work that needs otherworldly, grotesque brain designs.
+        Unleash your creativity with this collection of 30 AI-generated monster brain illustrations. 
+        Perfect for game design, horror projects, tabletop RPGs, digital art, or any creative work 
+        that needs otherworldly, grotesque brain designs.
     </p>
 
     <div class="features">
@@ -73,7 +129,7 @@ h1 { font-size: 42px; margin-bottom: 15px; font-weight: 700; letter-spacing: -1p
         </ul>
     </div>
 
-    <!-- Main thumbnail -->
+    <!-- Main preview image -->
     <img src="/static/3A3BF260-A6D4-44D8-95B6-DFA330863974.JPG" alt="Monster Brain Preview" class="thumbnail" onclick="openLightbox(this.src)">
 
     <!-- Sample gallery -->
@@ -84,27 +140,18 @@ h1 { font-size: 42px; margin-bottom: 15px; font-weight: 700; letter-spacing: -1p
         <img src="/static/885C1B1A-C1D2-464D-8F2C-8D9B9645EBAA.JPG" alt="Sample 3" onclick="openLightbox(this.src)">
     </div>
 
-    <!-- Price and buy button -->
+    <!-- Price and buy section -->
     <div class="price-section">
         <div class="price">$5</div>
         <p class="price-note">One-time payment • Instant access</p>
+        
         <form action="/create-checkout-session" method="POST">
             <button type="submit" class="buy-button">Buy Now</button>
         </form>
     </div>
-
-    <!-- Social share buttons -->
-    <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f7fafc; border-radius: 12px;">
-        <h3 style="color: #2d3748; font-size: 18px; margin-bottom: 15px;">Share this product:</h3>
-        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-            <a href="twitter://post?message=I%20just%20got%20AI%20Monster%20Brains%20-%2030%20unique%20designs%20for%20%245!%20https://my-digital-shop.onrender.com" target="_blank" rel="noopener noreferrer" style="padding:10px 20px; background:#1DA1F2; color:white; text-decoration:none; border-radius:5px; font-weight:600;">Share on Twitter</a>
-            <a href="fb://facewebmodal/f?href=https://my-digital-shop.onrender.com" target="_blank" rel="noopener noreferrer" style="padding:10px 20px; background:#4267B2; color:white; text-decoration:none; border-radius:5px; font-weight:600;">Share on Facebook</a>
-            <a href="reddit://submit?url=https://my-digital-shop.onrender.com&title=AI%20Monster%20Brains%20-%2030%20Unique%20Designs" target="_blank" rel="noopener noreferrer" style="padding:10px 20px; background:#FF4500; color:white; text-decoration:none; border-radius:5px; font-weight:600;">Share on Reddit</a>
-        </div>
-    </div>
 </div>
 
-<!-- Lightbox -->
+<!-- Lightbox overlay -->
 <div id="lightbox" onclick="closeLightbox()">
     <img id="lightbox-img" src="" alt="Enlarged preview">
 </div>
@@ -113,23 +160,26 @@ h1 { font-size: 42px; margin-bottom: 15px; font-weight: 700; letter-spacing: -1p
 function openLightbox(src) {
     document.getElementById('lightbox-img').src = src;
     document.getElementById('lightbox').style.display = 'flex';
-    document.body.style.overflow = "hidden";
 }
 function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
-    document.body.style.overflow = "auto";
 }
 
-// Play audio on first click for mobile compatibility
-document.addEventListener("click", function() {
-    const audio = document.getElementById("bg-music");
-    if(audio) audio.play();
-}, { once: true });
-
-// Close lightbox with Escape key
-document.addEventListener('keydown', function(e) {
-    if(e.key === 'Escape') closeLightbox();
+// Music toggle
+const musicBtn = document.getElementById('music-toggle');
+const bgMusic = document.getElementById('bg-music');
+musicBtn.addEventListener('click', () => {
+    if (bgMusic.paused) {
+        bgMusic.play();
+    } else {
+        bgMusic.pause();
+    }
 });
+
+// Mobile autoplay workaround
+document.addEventListener("click", function() {
+    if (bgMusic.paused) bgMusic.play();
+}, { once: true });
 </script>
 
 </body>
