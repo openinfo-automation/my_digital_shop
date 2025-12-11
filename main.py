@@ -1,43 +1,52 @@
-import os
+from flask import Flask, render_template, send_file, redirect, url_for
 import stripe
-from flask import Flask, render_template, redirect, send_from_directory, url_for
+import os
 
 app = Flask(__name__)
 
-# Stripe secret key from environment variable
-stripe.api_key = os.environ.get("STRIPE_SECRET_KEY")
+# Stripe setup
+stripe.api_key = os.environ.get("STRIPE_SECRET_KEY")  # Set in Render Environment
 
+# Landing page
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html")  # Your main page with product info and Buy button
 
-@app.route("/create-checkout-session", methods=["POST"])
-def create_checkout_session():
+# Stripe checkout session
+@app.route("/buy")
+def buy():
     session = stripe.checkout.Session.create(
         payment_method_types=["card"],
         line_items=[{
             "price_data": {
                 "currency": "usd",
-                "product_data": {"name": "AI Productivity Cheat Sheet"},
-                "unit_amount": 500,  # $5 in cents
+                "product_data": {
+                    "name": "Monster Brains PDF",
+                },
+                "unit_amount": 500,  # $5.00 in cents
             },
             "quantity": 1,
         }],
         mode="payment",
-        success_url="https://my-digital-shop.onrender.com/success",
-        cancel_url="https://my-digital-shop.onrender.com/",
+        success_url=url_for("success", _external=True),
+        cancel_url=url_for("index", _external=True),
     )
     return redirect(session.url, code=303)
 
+# Success page
 @app.route("/success")
 def success():
-    # Show thank-you page and trigger PDF download automatically
-    return render_template("success.html")
+    return render_template("success.html")  # Thank you page with download link
 
+# Download PDF
 @app.route("/download")
 def download():
-    # Serve the PDF file for download
-    return send_from_directory('static', 'product.pdf', as_attachment=True)
+    return send_file(
+        "static/Monster_Brains.pdf",
+        as_attachment=True,
+        download_name="Monster_Brains.pdf",
+        mimetype="application/pdf"
+    )
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    app.run(debug=True)
