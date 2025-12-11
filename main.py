@@ -1,10 +1,38 @@
-from flask import Flask
+import os
+import stripe
+from flask import Flask, render_template, redirect
 
 app = Flask(__name__)
 
+# Stripe key is now read safely from environment variable
+stripe.api_key = os.environ.get("STRIPE_SECRET_KEY")
+
 @app.route("/")
 def index():
-    return "Hello! Your shop is running."
+    return render_template("index.html")
+
+@app.route("/create-checkout-session", methods=["POST"])
+def create_checkout_session():
+    session = stripe.checkout.Session.create(
+        payment_method_types=["card"],
+        line_items=[{
+            "price_data": {
+                "currency": "usd",
+                "product_data": {"name": "AI Productivity Cheat Sheet"},
+                "unit_amount": 500,  # $5 in cents
+            },
+            "quantity": 1,
+        }],
+        mode="payment",
+        success_url="https://my-digital-shop.onrender.com/success",
+        cancel_url="https://my-digital-shop.onrender.com/",
+    )
+    return redirect(session.url, code=303)
+
+@app.route("/success")
+def success():
+    return "<h1>Thank you! Your download will be available shortly.</h1>"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    # Render uses port 10000 for Python services
+    app.run(host="0.0.0.0", port=10000)
