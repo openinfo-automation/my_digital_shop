@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Thank You!</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #f9f9f9; }
-        h1 { color: #222; font-size: 36px; margin-bottom: 10px; }
-        p { font-size: 18px; color: #555; margin-bottom: 30px; }
-        .download-button { padding: 15px 40px; font-size: 20px; cursor: pointer; background: #4CAF50; color: white; border: none; border-radius: 8px; transition: background 0.3s; text-decoration: none; display: inline-block; }
-        .download-button:hover { background: #45a049; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You!</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 600px;
+}
+h1 {
+    color: #2d3748;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+p {
+    font-size: 18px;
+    color: #4a5568;
+    margin-bottom: 35px;
+}
+.download-button {
+    display: inline-block;
+    padding: 18px 60px;
+    font-size: 20px;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(102,126,234,0.4);
+    transition: all 0.3s;
+}
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102,126,234,0.6);
+}
+</style>
 </head>
 <body>
+<div class="container">
     <h1>Thank You for Your Purchase!</h1>
-    <p>Your AI_Monster_Brains.pdf is ready to download.</p>
-    <a href="/download" class="download-button">Download PDF</a>
+    <p>Your <strong>AI_Monster_Brains.pdf</strong> is ready to download instantly.</p>
+    <a href="/static/AI_Monster_Brains.pdf" class="download-button" download>Download PDF</a>
+    <p style="margin-top:20px; color:#718096; font-size:14px;">🔒 Secure download</p>
+</div>
 </body>
 </html>
