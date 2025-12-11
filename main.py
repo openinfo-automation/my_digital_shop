@@ -5,12 +5,12 @@ import os
 app = Flask(__name__)
 
 # Stripe setup
-stripe.api_key = os.environ.get("STRIPE_SECRET_KEY")  # Set this in Render Environment
+stripe.api_key = os.environ.get("STRIPE_SECRET_KEY")  # Set in Render Environment
 
 # Landing page
 @app.route("/")
 def index():
-    return render_template("index.html")  # Your main page with product info and Buy button
+    return render_template("index.html")  # Main page with product info and Buy button
 
 # Stripe checkout session
 @app.route("/buy")
@@ -21,7 +21,7 @@ def buy():
             "price_data": {
                 "currency": "usd",
                 "product_data": {
-                    "name": "AI Monster Brains PDF",
+                    "name": "AI_Monster_Brains.pdf",  # Matches your PDF file
                 },
                 "unit_amount": 500,  # $5.00 in cents
             },
@@ -42,7 +42,7 @@ def success():
 @app.route("/download")
 def download():
     return send_file(
-        "static/AI_Monster_Brains.pdf",
+        "static/AI_Monster_Brains.pdf",  # Exact file name in static/
         as_attachment=True,
         download_name="AI_Monster_Brains.pdf",
         mimetype="application/pdf"
