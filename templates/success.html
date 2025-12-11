@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thank You! - AI Monster Brains</title>
+<title>Thank You!</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
@@ -12,194 +11,78 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 .container {
-    max-width: 600px;
+    max-width: 700px;
     background: white;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    padding: 60px 40px;
+    padding: 50px 40px;
     text-align: center;
 }
-.success-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 30px;
-    animation: scaleIn 0.5s ease-out;
+h1 { 
+    color: #2d3748; 
+    font-size: 42px; 
+    margin-bottom: 20px;
 }
-.success-icon svg {
-    width: 50px;
-    height: 50px;
-    stroke: white;
-    stroke-width: 3;
-    fill: none;
-}
-@keyframes scaleIn {
-    from {
-        transform: scale(0);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-h1 {
-    color: #2d3748;
-    font-size: 36px;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-.message {
-    font-size: 18px;
-    color: #4a5568;
-    line-height: 1.6;
+p { 
+    font-size: 18px; 
+    color: #4a5568; 
     margin-bottom: 35px;
 }
-.download-section {
-    background: #f7fafc;
-    padding: 30px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-}
-.download-button {
-    display: inline-block;
-    padding: 18px 50px;
-    font-size: 20px;
+.download-button { 
+    padding: 20px 60px; 
+    font-size: 22px; 
+    cursor: pointer; 
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
+    color: white; 
+    border: none; 
+    border-radius: 50px; 
     transition: all 0.3s;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-    cursor: pointer;
 }
-.download-button:hover {
+.download-button:hover { 
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
-.info-box {
-    background: #edf2f7;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-    text-align: left;
+.guarantee { 
+    margin-top: 20px; 
+    font-size: 14px; 
+    color: #718096; 
 }
-.info-box h3 {
-    color: #2d3748;
-    font-size: 18px;
-    margin-bottom: 12px;
-}
-.info-box ul {
-    list-style: none;
-    padding: 0;
-}
-.info-box li {
-    color: #4a5568;
-    padding: 8px 0;
-    font-size: 15px;
-}
-.info-box li:before {
-    content: "→ ";
-    color: #667eea;
-    font-weight: bold;
-    margin-right: 8px;
-}
-.footer-note {
-    margin-top: 30px;
-    color: #718096;
-    font-size: 14px;
-}
-.email-note {
-    background: #fff5f5;
-    border-left: 4px solid #fc8181;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-.email-note p {
-    color: #742a2a;
-    font-size: 14px;
-    margin: 0;
-}
-
 @media (max-width: 768px) {
-.container { padding: 40px 25px; }
-h1 { font-size: 28px; }
+.container { padding: 30px 20px; }
+h1 { font-size: 32px; }
+p { font-size: 16px; }
+.download-button { font-size: 18px; padding: 15px 50px; }
 }
 </style>
-
 </head>
 <body>
 
-<div class="container">
-    <div class="success-icon">
-        <svg viewBox="0 0 52 52">
-            <path d="M14 27l7 7 16-16"/>
-        </svg>
-    </div>
-
-```
-<h1>Payment Successful! 🎉</h1>
-
-<p class="message">
-    Thank you for your purchase! Your AI Monster Brains collection is ready to download.
-</p>
-
-<div class="download-section">
-    <a href="/download" class="download-button">
-        📥 Download Your PDF
-    </a>
-</div>
-
-<div class="email-note">
-    <p><strong>Important:</strong> Your download will also be emailed to you as a backup. Check your spam folder if you don't see it within 5 minutes.</p>
-</div>
-
-<div class="info-box">
-    <h3>What's Included:</h3>
-    <ul>
-        <li>30 unique monster brain illustrations</li>
-        <li>High-resolution images</li>
-        <li>Commercial use rights</li>
-        <li>Instant access - no waiting</li>
-    </ul>
-</div>
-
-<p class="footer-note">
-    Questions or issues? Contact us at support@yourshop.com
-</p>
-
-<!-- Social Share Buttons -->
-<div style="text-align: center; margin-top: 30px; padding: 25px; background: #f0f4ff; border-radius: 12px; border: 2px solid #667eea;">
-    <h3 style="color: #2d3748; font-size: 18px; margin-bottom: 10px;">🎉 Love it? Share with other creators!</h3>
-    <p style="color: #4a5568; font-size: 14px; margin-bottom: 15px;">Help indie devs discover this pack</p>
-    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-        <a href="https://twitter.com/intent/tweet?text=Just%20got%20these%20awesome%20AI%20Monster%20Brains%20for%20my%20game!%20Only%20%245%20for%2030%20designs&url=https://my-digital-shop.onrender.com" target="_blank" style="padding: 12px 24px; background: #1DA1F2; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: transform 0.2s;">Share on Twitter</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://my-digital-shop.onrender.com" target="_blank" style="padding: 12px 24px; background: #4267B2; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: transform 0.2s;">Share on Facebook</a>
-        <a href="https://www.reddit.com/submit?url=https://my-digital-shop.onrender.com&title=AI%20Monster%20Brains%20-%20Perfect%20for%20Horror%20Games" target="_blank" style="padding: 12px 24px; background: #FF4500; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: transform 0.2s;">Share on Reddit</a>
-    </div>
-</div>
-```
-
-</div>
-
+<!-- Background music -->
+<audio autoplay loop id="bg-music">
+    <source src="/static/mysong.mp3" type="audio/mpeg">
+</audio>
 <script>
-// Auto-download after 2 seconds (optional)
-setTimeout(function() {
-    // Uncomment the line below if you want automatic download
-    // window.location.href = '/download';
-}, 2000);
+document.addEventListener("click", function() {
+    const audio = document.getElementById("bg-music");
+    if (audio) audio.play();
+}, { once: true });
 </script>
+
+<div class="container">
+    <h1>Thank You for Your Purchase!</h1>
+    <p>Your <strong>AI_Monster_Brains.pdf</strong> is ready to download.</p>
+    <a href="/static/AI_Monster_Brains.pdf" download class="download-button">Download PDF</a>
+    <p class="guarantee">🔒 Secure download • Instant access</p>
+</div>
 
 </body>
 </html>
